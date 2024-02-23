@@ -1,3 +1,8 @@
+html {
+  --color-accent: oklch(82.65% 0.187 119.65);
+  accent-color: var(--color-accent);
+}
+
 body {
   /* Set line height to 1.5 times the font size
        and use the OS’s UI font as the website font
@@ -13,12 +18,47 @@ nav {
   ol,
   li {
     display: contents;
+    margin-bottom: 1em;
 
     a {
       text-decoration: none;
       color: inherit;
       flex: 1;
+      padding: 0.5em;
+      text-align: center;
+
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: oklch(80% 3% 200);
+
     }
   }
 
+}
+
+.current {
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+
+a:hover {
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--color-accent);
+  background-color: oklch(from var(--color-accent) 95% 5% h)
+}
+
+form {
+  font: inherit;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+
+  label,
+  button {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+  }
 }
