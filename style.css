@@ -3,6 +3,24 @@ html {
   accent-color: var(--color-accent);
 }
 
+h1 {
+  font-size: 400%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+img {
+  max-width: 100%;
+}
+
 body {
   /* Set line height to 1.5 times the font size
        and use the OS’s UI font as the website font
@@ -60,5 +78,38 @@ form {
     display: grid;
     grid-column: 1 / -1;
     grid-template-columns: subgrid;
+  }
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+
+  article {
+    display: grid;
+    padding: 0.35em;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+
+    h2 {
+      margin: 0;
+    }
+  }
+}
+
+.cv {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+
+  section {
+    display: grid;
+    padding: 0.5em;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+  }
+
+  section:hover {
+    background-color: oklch(from var(--color-accent) 95% 5% h)
   }
 }
